@@ -49,7 +49,7 @@ public class Main {
                 for(String m:modes){
                     startTime = System.nanoTime();
                     byte[] encrypted = AES.encrypt( secretKey,fileContents[i],m);
-                    encrypted[5]=17;
+                    encrypted[5]=17;  // corrupting a file to test if decryption still works
                     endTime = System.nanoTime();
                     System.out.println(m.toString()+" Szyfrowanie pliku "+Integer.toString(i)+": "+Long.toString((endTime - startTime)/1000000)+"ms");
                     startTime = System.nanoTime();
